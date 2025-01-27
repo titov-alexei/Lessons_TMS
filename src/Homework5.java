@@ -24,24 +24,28 @@ public class Homework5 {
         System.out.println("Задание №1. Поиск максимального и минимального значения.");
         int max = tempArray[0];
         int min = tempArray[0];
+        StringBuilder maxIndex = new StringBuilder();
+        StringBuilder minIndex = new StringBuilder();
+        maxIndex.append(tempArray[0]);
+        minIndex.append(tempArray[0]);
         for (int i = 1; i < tempArray.length; i++) {
             if (tempArray[i] > max) {
                 max = tempArray[i];
+                maxIndex.setLength(0);
+                maxIndex.append(i).append(' ');
+            } else if (tempArray[i] == max) {
+                maxIndex.append(i).append(' ');
             } else if (tempArray[i] < min) {
                 min = tempArray[i];
+                minIndex.setLength(0);
+                minIndex.append(i).append(' ');
+            } else if (tempArray[i] == min) {
+                minIndex.append(i).append(' ');
             }
         }
 
-        System.out.println("Максимальное значение равно " + max);
-        System.out.println("Минимальное значение равно " + min);
-
-        for (int i = 0; i < tempArray.length; i++) {
-            if (tempArray[i] == max) {
-                System.out.println("Индекс макимального элемента " + i);
-            } else  if (tempArray[i] == min) {
-                System.out.println("Индекс минимального элемента " + i);
-            }
-        }
+        System.out.println("Максимальное значение равно " + max + ". Индексы " + maxIndex);
+        System.out.println("Минимальное значение равно " + min  + ". Индексы " + minIndex);
     }
 
 
@@ -90,14 +94,13 @@ public class Homework5 {
         for (int i = 0; i < tempArray.length; i++) {
             if (revID < i) {
                 break;
-            } else {
-                if (tempArray[i] == tempArray[revID]) {
+            } else if (tempArray[i] == tempArray[revID]) {
                     revID--;
                 } else {
                     result = false;
                     break;
                 }
-            }
+
         }
         if (result) System.out.println("Массив палиндром");
         else System.out.println("Не палиндром");

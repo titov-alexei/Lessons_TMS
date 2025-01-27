@@ -87,14 +87,12 @@ fun palinromArray(tempArray: IntArray) {
     for (i in tempArray.indices) {
         if (revID < i) {
             break
-        } else {
-            if (tempArray[i] == tempArray[revID]) {
+        } else if (tempArray[i] == tempArray[revID]) {
                 revID--
             } else {
                 result = false
                 break
             }
-        }
     }
     if (result) println("Массив палиндром")
     else println("Не палиндром")
