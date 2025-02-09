@@ -34,4 +34,13 @@ public class Book {
         else return false;
     }
 
+    @Override
+    public int hashCode() {
+        return this.title.hashCode() + this.year;
+    }
+
+    @Override
+    public String toString() {
+        return this.title + " " + this.year + " ";
+    }
 }

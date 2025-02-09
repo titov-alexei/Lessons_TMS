@@ -16,5 +16,9 @@ class BookwithAuthor (val title : String, private val year : Int, val author: Au
     override fun hashCode(): Int {
         return title.hashCode() + year
     }
+
+    override fun toString(): String {
+        return "Title: $title, author: ${author.name}, year: $year"
+    }
 }
 

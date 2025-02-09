@@ -11,9 +11,11 @@ fun main() {
     val book1 = Book("Книга1", "Пушкин", 1830)
     val book2 = Book("Книга1", "Пушкин", 1833)
     val book3= Book("Книга2", "Пушкин", 1830)
-    book1.getInfo()
-    book2.getInfo()
-    book3.getInfo()
+
+    println(book1.toString())
+    println(book2.toString())
+    println(book3.toString())
+
     println("Результат book1 и book2: ${book1 == book2}")
     println("Результат book1 и book3: ${book1 == book3}")
 
@@ -40,9 +42,9 @@ fun createAuthor(){
     val bookWithAuthor1 = BookwithAuthor("Книга1", 1830, Author("Пушкин", 1780))
     val bookWithAuthor2 = BookwithAuthor("Книга1", 1833, Author("Пушкин", 1799))
     val bookWithAuthor3= BookwithAuthor("Книга2", 1830, Author("Пушкин", 1798))
-    bookWithAuthor1.getInfo()
-    bookWithAuthor2.getInfo()
-    bookWithAuthor3.getInfo()
-    println("Результат book1 и book2: ${bookWithAuthor1.equals(bookWithAuthor2)}")
+    println(bookWithAuthor1.toString())
+    println(bookWithAuthor2.toString())
+    println(bookWithAuthor3.toString())
+    println("Результат book1 и book2: ${bookWithAuthor1.equals(bookWithAuthor2)}") //equals эквивалентно ==
     println("Результат book1 и book3: ${bookWithAuthor1 == bookWithAuthor3}")
 }
