@@ -3,21 +3,21 @@ package Leeson7.Homework7.Java;
 public class Book {
 
     private String title;
-    private String author;
     private int year;
+    private Author author;
 
-    public Book(String title, String author, int year) {
+    public Book(String title, int year, Author author) {
         this.title = title;
         this.author = author;
         this.year = year;
     }
 
     //Вывод строки: Название, автор и год издания.
-    public void getAboutBook() {
-        System.out.println("Книга: " + title +
-                "\nАвтор: " + author +
-                "\nГод: " + year + ".");
-    }
+//    public void getAboutBook() {
+//        System.out.println("Книга: " + title +
+//                "\nАвтор: " + this.author +
+//                "\nГод: " + year + ".");
+//    }
 
     //Переопределение метода equals
     @Override
@@ -29,7 +29,7 @@ public class Book {
         //Book temp = (Book) obj;
         //return (this.title == temp.title && this.author == temp.author)?true:false;
 
-        if (this.title.equals(((Book) obj).title) && this.author.equals(((Book) obj).author))
+        if (this.title.equals(((Book) obj).title) && author.equals(((Book) obj).author))
             return true;
         else return false;
     }

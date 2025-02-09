@@ -1,5 +1,6 @@
 package Leeson7;
 
+import Leeson7.Homework7.Java.Author;
 import Leeson7.Homework7.Java.Book;
 import Leeson7.Homework7.Java.Month;
 
@@ -36,20 +37,24 @@ public class Lesson7 {
 
 
         //Задание №1. Работа с классами и методами
+        /*
         System.out.println("Задание №1.");
         Book bookIsland = new Book("Остров сокровищ", "Стивенсон", 1883);
         bookIsland.getAboutBook();
         Book bookPushkin = new Book("Сказка о рыбаке и рыбке", "Пушкин", 1820);
         Book bookPushkin2 = new Book("Сказка о рыбаке и рыбке", "Пушкин", 1830);
         System.out.println("Результат сравнения : " + bookPushkin.equals(bookPushkin2));
+        */
 
         isWinter();  //Задание №2. Определение зимнего месяца
 
+        createAuthor(); // Задание №3. Композиция классов и equals
     }
 
     private static void isWinter() {
         //Задание №2. Использование перечислений (enum)
         System.out.println("\nЗадание №2. Определение зимних месяцев. Введите месяц:");
+
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine().toUpperCase();
 
@@ -63,5 +68,15 @@ public class Lesson7 {
         } else {
             System.out.println("Это не зимний месяц");
         }
+    }
+
+    private static void createAuthor() {
+        System.out.println("\nЗадание №3. Композиция классов и equals. Создание класса Author и переопрежедение метода equals:");
+
+        Author author1 = new Author("Пушкин", 1830);
+        Author author2 = new Author("Пушкин", 1831);
+        Book book1 = new Book("О рыбке", 1821, author1);
+        Book book2 = new Book("О рыбке", 1831, author2);
+        System.out.println("Результат сравнения: " + book1.equals(book2));
     }
 }
