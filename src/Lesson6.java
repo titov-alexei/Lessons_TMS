@@ -51,7 +51,7 @@ public class Lesson6 {
         while (swapped) {
             swapped = false;
             if (sort) {
-                for (int i = 0; i < tempArray.length - 1; i++) {
+                for (int i = 0; i < tempArray.length - i - 1; i++) {
                     if (tempArray[i] > tempArray[i + 1]) {
                         buff = tempArray[i];
                         tempArray[i] = tempArray[i + 1];
@@ -60,7 +60,7 @@ public class Lesson6 {
                     }
                 }
             } else {
-                for (int i = 0; i < tempArray.length - 1; i++) {
+                for (int i = 0; i < tempArray.length - i - 1; i++) {
                     if (tempArray[i] < tempArray[i + 1]) {
                         buff = tempArray[i];
                         tempArray[i] = tempArray[i + 1];
