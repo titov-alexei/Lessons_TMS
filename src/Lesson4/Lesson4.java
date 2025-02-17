@@ -1,3 +1,5 @@
+package Lesson4;
+
 import java.util.Scanner;
 
 public class Lesson4 {
@@ -11,6 +13,7 @@ public class Lesson4 {
     порядке, используя только методы String и StringBuilder.
     */
     public static void changeString () {
+        System.out.println("Введите строку:");
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
         StringBuilder sb = new StringBuilder();
